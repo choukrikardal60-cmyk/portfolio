@@ -31,14 +31,14 @@ export default function Contact() {
 
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center px-6 py-12"
+      className="min-h-screen flex items-center justify-center px-4 md:px-6 py-10 md:py-12"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
     >
 
-      <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-10 max-w-3xl w-full">
+      <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-6 md:p-10 max-w-3xl w-full">
 
-        <h1 className="text-3xl font-bold text-center mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">
           Contactez-moi
         </h1>
 
@@ -49,7 +49,7 @@ export default function Contact() {
             name="user_name"
             placeholder="Votre nom"
             required
-            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 outline-none"
+            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-sm md:text-base"
           />
 
           <input
@@ -57,7 +57,7 @@ export default function Contact() {
             name="user_email"
             placeholder="Votre email"
             required
-            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 outline-none"
+            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-sm md:text-base"
           />
 
           <textarea
@@ -65,7 +65,7 @@ export default function Contact() {
             placeholder="Votre message"
             rows="5"
             required
-            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 outline-none"
+            className="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-sm md:text-base"
           ></textarea>
 
           <button
@@ -79,7 +79,7 @@ export default function Contact() {
         </form>
 
         {status && (
-          <p className="text-center mt-4 text-green-500">
+          <p className="text-center mt-4 text-green-500 text-sm md:text-base">
             {status}
           </p>
         )}

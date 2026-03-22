@@ -19,12 +19,12 @@ export default function App() {
       <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
 
         {/* NAVBAR */}
-        <nav className="bg-white dark:bg-gray-800 shadow-md p-4 flex flex-wrap justify-center gap-6 items-center sticky top-0 z-50">
+        <nav className="bg-white dark:bg-gray-800 shadow-md p-4 flex flex-wrap justify-center gap-4 md:gap-6 items-center sticky top-0 z-50 text-sm md:text-base">
 
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500 transition"
             }
           >
             À propos
@@ -33,7 +33,7 @@ export default function App() {
           <NavLink
             to="/skills"
             className={({ isActive }) =>
-              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500 transition"
             }
           >
             Compétences
@@ -42,7 +42,7 @@ export default function App() {
           <NavLink
             to="/projects"
             className={({ isActive }) =>
-              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500 transition"
             }
           >
             Projets
@@ -51,7 +51,7 @@ export default function App() {
           <NavLink
             to="/objective"
             className={({ isActive }) =>
-              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500 transition"
             }
           >
             Objectif
@@ -60,16 +60,16 @@ export default function App() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              isActive ? "text-blue-500 font-bold" : "hover:text-blue-500 transition"
             }
           >
             Contact
           </NavLink>
 
-          {/* DARK MODE TOGGLE */}
+          {/* DARK MODE */}
           <button
             onClick={() => setDark(!dark)}
-            className="px-3 py-1 bg-gray-800 text-white rounded hover:scale-105 transition"
+            className="px-3 py-1 bg-gray-800 text-white rounded hover:scale-105 transition text-xs md:text-sm"
           >
             {dark ? "Light" : "Dark"}
           </button>
@@ -77,7 +77,7 @@ export default function App() {
         </nav>
 
         {/* ROUTES */}
-        <main className="pb-28">
+        <main className="pb-32">
           <Routes>
             <Route path="/" element={<About />} />
             <Route path="/skills" element={<Skills />} />
@@ -88,14 +88,15 @@ export default function App() {
         </main>
 
         {/* FOOTER FIXE */}
-        <footer className="fixed bottom-0 w-full bg-gray-900 text-white p-4">
+        <footer className="fixed bottom-0 w-full bg-gray-900 text-white p-4 shadow-lg">
+
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 
-            {/* CONTACT INFO */}
-            <div className="text-center md:text-left text-sm">
+            {/* CONTACT */}
+            <div className="text-center md:text-left text-xs md:text-sm space-y-1">
 
               <p>
-                Email:{" "}
+                Email :{" "}
                 <a
                   href="mailto:choukri.kardal60@gmail.com"
                   className="hover:text-blue-400 underline"
@@ -105,7 +106,7 @@ export default function App() {
               </p>
 
               <p>
-                Téléphone:{" "}
+                Téléphone :{" "}
                 <a
                   href="tel:+212623417263"
                   className="hover:text-green-400 underline"
@@ -116,14 +117,14 @@ export default function App() {
 
             </div>
 
-            {/* SOCIAL ICONS */}
-            <div className="flex gap-6 text-2xl">
+            {/* SOCIAL */}
+            <div className="flex gap-6 text-xl md:text-2xl">
 
               <a
                 href="https://www.linkedin.com/in/choukri-kardal-0b74b1330/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition transform hover:scale-110"
               >
                 <FaLinkedin />
               </a>
@@ -132,7 +133,7 @@ export default function App() {
                 href="https://wa.me/212623417263"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-400 transition"
+                className="hover:text-green-400 transition transform hover:scale-110"
               >
                 <FaWhatsapp />
               </a>
@@ -140,6 +141,7 @@ export default function App() {
             </div>
 
           </div>
+
         </footer>
 
       </div>
